@@ -16,11 +16,29 @@
     </dependency>
   </dependencies>
   <properties>
-		<!-- https://maven.apache.org/general.html#encoding-warning -->
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
       <maven.compiler.source>1.8</maven.compiler.source>
       <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+  </properties>
 
+  <!-- Maven Exec Plugin Configuration -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>SimpleJavaApp</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
