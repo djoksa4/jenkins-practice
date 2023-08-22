@@ -1,12 +1,16 @@
 pipeline {
 	
   agent any
+  tools {
+    maven 'Maven'
+  }
 
   stages {
 
     stage("build") {
       steps {
         echo 'building the application...'
+        sh 'mvn install'
       }
     }
 
@@ -22,5 +26,11 @@ pipeline {
       }
     }
 
+  }
+
+  post {
+    always {}
+    success {}
+    failure {}
   }
 } 
