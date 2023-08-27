@@ -1,5 +1,3 @@
-env.DOCKER_HOST = 'tcp://20.8.105.25:4243'
-
 pipeline {
     agent {
         docker {
