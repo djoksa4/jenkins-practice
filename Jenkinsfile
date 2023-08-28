@@ -21,6 +21,7 @@ pipeline {
 
     post {
         always {
+            sh 'exec:java'
             cleanWs()
         }
     }
