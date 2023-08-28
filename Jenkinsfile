@@ -17,11 +17,17 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+
+        stage("Run") {
+            steps {
+                sh "java -jar /var/lib/jenkins/workspace/jenkins_docker_maven_pipeline/target/java-project2-1.0-SNAPSHOT.jar"  
+            }
+        }
     }
+
 
     post {
         always {
-            sh 'exec:java'
             cleanWs()
         }
     }
